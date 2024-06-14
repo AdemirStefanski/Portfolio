@@ -16,13 +16,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow-lg";
 
   return (
     <nav>
       {/* div principal do header   */}
       <div
-        className={`${navbarBackground}${flexBetween} fixed top-0 z-30 w-full py-6`}
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
       >
         {/* div internar que deixa o conteúdo do header flutuante, centralizado e ocupando 5/6 do espaço horizontal(x) */}
         <div className={`${flexBetween} mx-auto w-5/6`}>
@@ -37,7 +37,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               <div>
 
               </div>
-              <div className={`${flexBetween} gap-7 text-sm ms-`}>
+              <div className={`${flexBetween} gap-7 text-lg font-museomoderno `}>
                 <Link 
                   page="Home"
                   selectedPage={selectedPage}
