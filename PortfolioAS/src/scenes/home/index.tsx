@@ -3,11 +3,12 @@ import { SelectedPage } from '@/shared/types';
 import { motion } from 'framer-motion';
 
 
-import HomePageText from "@/assets/HomePageText.png";
-import ProfilePicBW from "@/assets/profile_pic_b&w.png";
+import ProfilePicColor from "@/assets/profile_pic_color.png";
 import SponsonrRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
+import GitHubIcon from "@/assets/social.png";
+import LinkedInIcon from "@/assets/linkedin.png"
 
 
 type Props = {
@@ -15,18 +16,24 @@ type Props = {
 };
 
 const Home = ({ setSelectedPage }: Props) => {
+
+  
+
+
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+
+ 
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       {/* imagem e main header */}
       <motion.div 
-        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6 "
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
          
         {/* main header */}
-        <div className="z-10 mt-32 md:basis-3/5">
+        <div className="z-10 mt-32 md:basis-3/5 md:pl-8 ">
           {/* headings */}
           <motion.div 
             className="md:-mt-20"
@@ -39,19 +46,19 @@ const Home = ({ setSelectedPage }: Props) => {
               visible: {opacity: 1, x: 0},
             }}
           >
-            <div className="relative">
-              <div  className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-brushstrokebg flex">
-                {/* <img alt='home-page-text' src={HomePageText}/> */}
-                <p className="text-2xl text-white drop-shadow-as self-end" >
+            <div className="relative ">
+              <div  className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-brushstrokebg flex md:before:pl-40 ">
+                
+                <p className="text-2xl text-white drop-shadow-as self-end md:pl-40" >
                 Hi there! I'm 
                 </p>
-                <p className="font-museomoderno ml-2 text-3xl drop-shadow-as text-yellow-300 ">
+                <p className="font-museomoderno ml-2 text-3xl drop-shadow-as text-yellow-300  ">
                 Ademir Stefanski
                 </p>
               </div>            
             </div>
 
-            <p className="mt-8 text-xl md:text-start drop-shadow-as text-zinc-100 font-semibold ">
+            <p className="mt-8 text-xl md:text-start drop-shadow-as text-zinc-100 font-semibold md:pl-40 ">
             Front-end Developer based in São Paulo, Brazil.
             </p>
 
@@ -69,12 +76,12 @@ const Home = ({ setSelectedPage }: Props) => {
             >
               {/* LinkedIn */}
               <div>
-
+                <img alt="" src={LinkedInIcon} className="w-6 "/>
               </div>
 
               {/* GitHub */}
               <div>
-
+                <img alt="" src={GitHubIcon} className="w-6 "/>
               </div>
           </motion.div>
 
@@ -82,12 +89,16 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
 
         {/* imagem */}
-        <div className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end  
-        ">
-          <img alt="Home-pageGraphic" src={ProfilePicBW} />
+
+        <div
+          className="flex basis-3/5 justify-center md:z-10
+              md:ml-40 md:mt-16 md:justify-items-end md:h-2/4 md:pr-32"
+        >
+          <img alt="home-pageGraphic" src={ProfilePicColor} />
         </div>
-      </motion.div>
+        </motion.div>      
+
+        
 
       {/* tecnologias */}
       {isAboveMediumScreens && (
